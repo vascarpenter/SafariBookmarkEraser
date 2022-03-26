@@ -11,6 +11,7 @@
 		58B0E08A27ED59B100E6CE90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0E08927ED59B100E6CE90 /* ViewController.swift */; };
 		58B0E08C27ED59B400E6CE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B0E08B27ED59B400E6CE90 /* Assets.xcassets */; };
 		58B0E08F27ED59B400E6CE90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B0E08D27ED59B400E6CE90 /* Main.storyboard */; };
+		58B0E09827ED688700E6CE90 /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0E09727ED688700E6CE90 /* CustomCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,9 @@
 		58B0E08B27ED59B400E6CE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58B0E08E27ED59B400E6CE90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58B0E09027ED59B400E6CE90 /* SafariBookmarkEraser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafariBookmarkEraser.entitlements; sourceTree = "<group>"; };
+		58B0E09627ED59C500E6CE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		58B0E09727ED688700E6CE90 /* CustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
+		58F6334D27EF530300C13165 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +56,11 @@
 		58B0E08627ED59B100E6CE90 /* SafariBookmarkEraser */ = {
 			isa = PBXGroup;
 			children = (
+				58B0E09627ED59C500E6CE90 /* Info.plist */,
 				58B0E08727ED59B100E6CE90 /* AppDelegate.swift */,
 				58B0E08927ED59B100E6CE90 /* ViewController.swift */,
+				58F6334D27EF530300C13165 /* README.md */,
+				58B0E09727ED688700E6CE90 /* CustomCellView.swift */,
 				58B0E08B27ED59B400E6CE90 /* Assets.xcassets */,
 				58B0E08D27ED59B400E6CE90 /* Main.storyboard */,
 				58B0E09027ED59B400E6CE90 /* SafariBookmarkEraser.entitlements */,
@@ -132,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B0E08A27ED59B100E6CE90 /* ViewController.swift in Sources */,
+				58B0E09827ED688700E6CE90 /* CustomCellView.swift in Sources */,
 				58B0E08827ED59B100E6CE90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,10 +277,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SafariBookmarkEraser/SafariBookmarkEraser.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SafariBookmarkEraser/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -294,10 +306,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SafariBookmarkEraser/SafariBookmarkEraser.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SafariBookmarkEraser/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

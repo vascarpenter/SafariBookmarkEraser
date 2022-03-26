@@ -10,7 +10,7 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    
+    weak var vc: ViewController!
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
