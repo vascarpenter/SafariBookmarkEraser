@@ -40,6 +40,7 @@
 		58B0E07B27ED59B100E6CE90 = {
 			isa = PBXGroup;
 			children = (
+				58F6334D27EF530300C13165 /* README.md */,
 				58B0E08627ED59B100E6CE90 /* SafariBookmarkEraser */,
 				58B0E08527ED59B100E6CE90 /* Products */,
 			);
@@ -59,7 +60,6 @@
 				58B0E09627ED59C500E6CE90 /* Info.plist */,
 				58B0E08727ED59B100E6CE90 /* AppDelegate.swift */,
 				58B0E08927ED59B100E6CE90 /* ViewController.swift */,
-				58F6334D27EF530300C13165 /* README.md */,
 				58B0E09727ED688700E6CE90 /* CustomCellView.swift */,
 				58B0E08B27ED59B400E6CE90 /* Assets.xcassets */,
 				58B0E08D27ED59B400E6CE90 /* Main.storyboard */,
