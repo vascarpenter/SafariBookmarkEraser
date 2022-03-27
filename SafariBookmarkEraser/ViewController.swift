@@ -23,8 +23,10 @@ class ViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource
     var bookmarks: [URLList] = []
     @IBOutlet weak var myTableView: NSTableView!
     @IBOutlet weak var progressBar: NSProgressIndicator!
-    var finished: Int = 0
+    @IBOutlet weak var saveButton: NSButton!
     
+    var finished: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         (NSApplication.shared.delegate as! AppDelegate).vc = self
@@ -145,11 +147,12 @@ class ViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource
         
         return false  // array unchanged
     }
-
+    
     func accessURL(row: Int)
     {
         let request = URLRequest(url: URL(string: bookmarks[row].url)!)
-        let session = URLSession.shared
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+
         session.dataTask(with: request) { (data, response, error) in
             
             if error == nil, let response = response as? HTTPURLResponse
@@ -177,6 +180,10 @@ class ViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource
             DispatchQueue.main.async
             {   // GUI parts runs only in main thread
                 self.progressBar.doubleValue = (self.progressBar.doubleValue)+1
+                if self.progressBar.doubleValue >= self.progressBar.maxValue
+                {
+                    self.saveButton.isEnabled = true
+                }
                 self.myTableView.reloadData()
             }
 
@@ -187,8 +194,24 @@ class ViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource
     {
         let homeURL = FileManager.default.homeDirectoryForCurrentUser
         let sourceURL = homeURL.appendingPathComponent("Library/Safari/Bookmarks.plist")
-        let plist = try! NSMutableDictionary(contentsOf: sourceURL,
+        var plist : NSMutableDictionary = [:]
+        
+        do
+        {
+            plist = try NSMutableDictionary(contentsOf: sourceURL,
                                       error:())
+        }
+        catch
+        {
+            let alert = NSAlert()
+            alert.alertStyle = .critical
+            alert.messageText = "This program needs full disk access for accessing Safari's Bookmark.plist\n"
+            + "(Set System Prefs > Security & Privacy > Privacy > Full Disk Access)"
+            alert.addButton(withTitle: "OK")
+            let _ = alert.runModal()
+            return
+        }
+        
         for(key,value) in plist
         {
             if key as! String == "Children"
@@ -210,8 +233,23 @@ class ViewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource
         let homeURL = FileManager.default.homeDirectoryForCurrentUser
         let sourceURL = homeURL.appendingPathComponent("Library/Safari/Bookmarks.plist")
         _ = sourceURL.startAccessingSecurityScopedResource()
-        let plist = try! NSDictionary(contentsOf: sourceURL,
+        
+        var plist : NSMutableDictionary = [:]
+        do
+        {
+            plist = try NSMutableDictionary(contentsOf: sourceURL,
                                             error:())
+        }
+        catch
+        {
+            let alert = NSAlert()
+            alert.alertStyle = .critical
+            alert.messageText = "This program needs full disk access for accessing Safari's Bookmark.plist\n"
+                + "(Set System Prefs > Security&Privacy > Privacy > FullDiskAccess)"
+            alert.addButton(withTitle: "OK")
+            let _ = alert.runModal()
+            return
+        }
         sourceURL.stopAccessingSecurityScopedResource()
         
         for(key,value) in plist

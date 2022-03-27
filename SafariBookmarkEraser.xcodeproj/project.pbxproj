@@ -23,6 +23,7 @@
 		58B0E09027ED59B400E6CE90 /* SafariBookmarkEraser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafariBookmarkEraser.entitlements; sourceTree = "<group>"; };
 		58B0E09627ED59C500E6CE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		58B0E09727ED688700E6CE90 /* CustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
+		58D2AB1B27F07C6D00EAEF59 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		58F6334D27EF530300C13165 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				58B0E09627ED59C500E6CE90 /* Info.plist */,
+				58D2AB1B27F07C6D00EAEF59 /* Bridging-Header.h */,
 				58B0E08727ED59B100E6CE90 /* AppDelegate.swift */,
 				58B0E08927ED59B100E6CE90 /* ViewController.swift */,
 				58B0E09727ED688700E6CE90 /* CustomCellView.swift */,
@@ -282,6 +284,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SafariBookmarkEraser/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -296,6 +302,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hatenablog.gikoha.SafariBookmarkEraser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -311,6 +318,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SafariBookmarkEraser/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -325,6 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hatenablog.gikoha.SafariBookmarkEraser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
